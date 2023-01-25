@@ -1,10 +1,13 @@
 #!/bin/bash
+
 ##### Change these values ###
 ZONE_ID="Z00325153BSY62SLW1O3"
 DOMAIN="chandupcs.online"
-SG_NAME="all-alowdhere"
+SG_NAME="all_alowdhere"
 env=dev
-#############
+#############################
+
+
 
 create_ec2() {
   PRIVATE_IP=$(aws ec2 run-instances \
