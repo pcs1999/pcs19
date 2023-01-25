@@ -1,14 +1,10 @@
 #!/bin/bash
-
 ##### Change these values ###
 ZONE_ID="Z00325153BSY62SLW1O3"
 DOMAIN="chandupcs.online"
 SG_NAME="all-alowdhere"
 env=dev
 #############################
-
-
-
 create_ec2() {
   PRIVATE_IP=$(aws ec2 run-instances \
       --image-id ${AMI_ID} \
@@ -27,8 +23,6 @@ create_ec2() {
      exit 1
   fi
 }
-
-
 ## Main Program
 AMI_ID=$(aws ec2 describe-images --filters "Name=name,Values=Centos-8-DevOps-Practice" | jq '.Images[].ImageId' | sed -e 's/"//g')
 if [ -z "${AMI_ID}" ]; then
@@ -41,8 +35,6 @@ if [ -z "${SGID}" ]; then
   echo "Given Security Group does not exit"
   exit 1
 fi
-
-
 for component in catalogue cart user shipping payment frontend mongodb mysql rabbitmq redis dispatch; do
   COMPONENT="${component}-${env}"
   create_ec2
