@@ -32,3 +32,13 @@
       msg: pcs == {{pcs}}
      vars: 
       pcs: pendemchandrashekar.online
+
+# declaring variable at inventory level
+- name: declaring variable at inventory level
+  hosts: all 
+  connection: local 
+  tasks: 
+   - name: declare and accessing variable
+     ansible.builtin.debug:
+      msg: pcs == {{pcs}} 
+      
