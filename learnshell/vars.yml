@@ -17,7 +17,7 @@
   hosts: all 
   connection: local 
   tasks: 
-   - name: accessing a variable
+   - name: accessing  variable
      ansible.builtin.debug:
       msg: pcs == {{pcs}}
      vars: 
