@@ -12,6 +12,15 @@
        msg: pcs == {{pcs}}  
 
 # declaring variable in a file
+- name: declaring at file level 
+  hosts: all 
+  connection: local 
+  vars_files:
+   -vars.yml 
+  tasks: 
+   - name: declaring a variable in another file
+     ansible.builtin.debug:
+      msg: pcs == {{pcs}} 
 
 # declaring variable at task level
 - name: declaring variable at task level
