@@ -11,7 +11,7 @@
       ansible.builtin.debug:
        msg: pcs == {{pcs}}  
 
-# declaring variable in  file
+# declaring variable in a file
 # declaring variable at task level
 - name: declaring variable at task level
   hosts: all 
@@ -19,6 +19,6 @@
   tasks: 
    - name: accessing a variable
      ansible.builtin.debug:
-      msg: pcs1 == {{pcs1}}
+      msg: pcs == {{pcs}}
      vars: 
-      pcs1: today is satday
+      pcs: pendemchandrashekar
