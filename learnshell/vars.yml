@@ -1,9 +1,10 @@
 # declaring variabl at play level
-- hosts: all
+- name: declaring variabl at play level
+  hosts: all
   connection: local 
   become: yes
   vars:
-   pcs: pendem chandra shekar
+   pcs: pendemchandrashekar
   tasks: 
     - name: accessing a variable
       ansible.builtin.debug:
