@@ -5,7 +5,7 @@
   vars:
    pcs: pendem chandra shekar
   tasks: 
-   - name: accessing a variable
+  - name: accessing a variable
      ansible.builtin.debug:
      msg: pcs == {{pcs}}  
 
