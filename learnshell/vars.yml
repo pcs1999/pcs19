@@ -19,6 +19,6 @@
   tasks: 
    - name: accessing a variable
      ansible.builtin.debug:
-      msg: pcs == {{pcs}}
+      msg: pcs1 == {{pcs1}}
      vars: 
-      pcs: today is satday
+      pcs1: today is satday
