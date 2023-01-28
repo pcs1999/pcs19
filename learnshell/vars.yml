@@ -16,7 +16,7 @@
   hosts: all 
   connection: local 
   vars_files:
-   -vars.yml 
+   -vars1.yml 
   tasks: 
    - name: declaring a variable in another file
      ansible.builtin.debug:
