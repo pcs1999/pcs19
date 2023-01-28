@@ -7,7 +7,7 @@
   tasks: 
   - name: accessing a variable
      ansible.builtin.debug:
-     msg: pcs == {{pcs}}  
+      msg: pcs == {{pcs}}  
 
 # declaring variable in  file
 # declaring variable at task level
