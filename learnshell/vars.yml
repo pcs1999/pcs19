@@ -50,4 +50,14 @@
    - name: accessing fact 
      ansible.builtin.debug: 
       msg: ansible host name == {{ansible_fqdn}}
+
+# run time variable task from output 
+- name: output regsiter 
+  hosts: all 
+  connection: local 
+  tasks: 
+   - name: run a shell command  
+     ansible.builtin.shell: uptime 
+      
+
      
