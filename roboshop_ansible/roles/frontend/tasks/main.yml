@@ -2,8 +2,11 @@
   ansible.builtin.yum:
     name: nginx
     state: installed 
-  register: out 
   
-- name: attribute
-  ansible.builtin.debug:
-   msg: "{{out}}"
+  
+- name: remove directory htttp
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+
+
