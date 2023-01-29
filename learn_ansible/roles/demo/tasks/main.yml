@@ -1,0 +1,4 @@
+ansible.builtin.debug: 
+ msg: pcs == {{pcs}}
+vars: 
+  pcs: hi hello welcome to ansible 
