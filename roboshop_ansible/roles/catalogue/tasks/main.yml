@@ -43,3 +43,10 @@
    daemon_reload: yes
    enabled: yes 
    state: restarted 
+
+
+- name: load schema
+  community.mongodb.mongodb_shell:
+    login_host: mongodb-dev.chandupcs.online
+    file: "/app/schema/catalogue.js"
+    idempotent: yes
