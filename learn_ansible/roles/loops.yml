@@ -1,0 +1,21 @@
+- name: loops demo 
+  hosts: all 
+  become : yes 
+  tasks: 
+   - name: print names
+     ansible.builtin.debug:
+      msg: my name is "{{item}}"
+     loop:
+      - chandra
+      - shekar 
+  - name: name and age 
+    ansible.builtin.debug:
+     msg: my name is {{item.age}}, & my age is {{item.age}}
+    loop:
+     - {name: "chandra", age: 24}
+     - {name: "shekar", age: 23}
+
+
+     
+
+      
