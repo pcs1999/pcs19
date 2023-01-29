@@ -1,4 +1,4 @@
-ansible.builtin.debug: 
- msg: pcs == {{pcs}}
-vars: 
-  pcs: hi hello welcome to ansible 
+- name: print hello 
+  ansible.builtin.debug: 
+   msg: hi hello welcome to ansible 
+  
