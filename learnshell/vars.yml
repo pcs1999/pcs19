@@ -42,3 +42,12 @@
      ansible.builtin.debug:
       msg: pcs == {{pcs}} 
       
+# declaring the fact
+- name: declaring a fact 
+  hosts: all 
+  connection: local 
+  tasks: 
+   - name: accessing fact 
+     ansible.builtin.debug: 
+      msg: ansible host name == {{ansible_fqdn}}
+     
