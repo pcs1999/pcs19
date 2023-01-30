@@ -9,7 +9,7 @@
 - name: maven build 
   ansible.builtin.shell: mvn clean package ; mv target/{{component}}-1.0.jar {{component}}.jar
   args: 
-    chdir: /app
+   chdir: /app
 
 - name: including systemd task
   ansible.builtin.include_tasks: "systemd.yml"
