@@ -15,7 +15,7 @@
     path: /app
     state: absent
 
-- name: create directory htttp
+- name: create directory app
   ansible.builtin.file:
     path: /app
     state: directory
@@ -39,7 +39,7 @@
 
 - name: start {{component}} service 
   ansible.builtin.service: 
-   name: "{{component}} "
+   name: "{{component}}"
    daemon_reload: yes
    enabled: yes 
    state: restarted 
