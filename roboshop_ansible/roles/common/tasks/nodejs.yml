@@ -1,24 +1,9 @@
 - name: setup nodejs repo
   ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
-- name: Install nodejs 
-  ansible.builtin.yum: 
-   name: nodejs 
-   state: installed 
-
-- name: add application user 
-  ansible.builtin.user:
-   name: roboshop 
-
-- name: remove directory app
-  ansible.builtin.file:
-    path: /app
-    state: absent
-
-- name: create directory app
-  ansible.builtin.file:
-    path: /app
-    state: directory
+- name: including app pre-req
+  ansible.builtin.include_tasks: "app_prereq.yml"
+  
 
 
 - name:  download app {{component}} content
@@ -32,18 +17,9 @@
    path: /app
    state: latest
 
-- name: copy the systemd.service file
-  ansible.builtin.copy: 
-   src: "{{component}}.service"
-   dest: /etc/systemd/system/{{component}}.service 
 
-- name: start {{component}} service 
-  ansible.builtin.service: 
-   name: "{{component}}"
-   daemon_reload: yes
-   enabled: yes 
-   state: restarted 
-  
+- name: including systemd task
+  ansible.builtin.include_tasks: "systemd.yml"
 
 - name: load schema 
   ansible.builtin.include_tasks: "{{schema_type}}_schema.yml"

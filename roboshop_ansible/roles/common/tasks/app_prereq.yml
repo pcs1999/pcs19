@@ -1,0 +1,18 @@
+- name: Install nodejs 
+  ansible.builtin.yum: 
+   name: nodejs 
+   state: installed 
+
+- name: add application user 
+  ansible.builtin.user:
+   name: roboshop 
+
+- name: remove directory app
+  ansible.builtin.file:
+    path: /app
+    state: absent
+
+- name: create directory app
+  ansible.builtin.file:
+    path: /app
+    state: directory
