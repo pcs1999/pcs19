@@ -1,3 +1,10 @@
+- name: install python dep
+  ansible.builtin.yum: 
+    name: 
+     - python3-pymysql 
+     - mysql 
+    state: installed
+
 - name: load mysql schema 
   community.mysql.mysql_db: 
    state: import 
