@@ -4,7 +4,7 @@
    state: installed 
 
 - name: including app pre-req 
-  ansible.builtin.include_tasks: "app_preq.yml"
+  ansible.builtin.include_tasks: "app_prereq.yml"
 
 - name: maven build 
   ansible.builtin.shell: mvn clean package ; mv target/{{component}}-1.0.jar {{component}}.jar
