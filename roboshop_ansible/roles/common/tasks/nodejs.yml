@@ -10,13 +10,6 @@
   ansible.builtin.include_tasks: "app_prereq.yml"
   
 
-
-- name:  download app {{component}} content
-  ansible.builtin.unarchive:
-    src: https://roboshop-artifacts.s3.amazonaws.com/{{component}}.zip 
-    dest: /app
-    remote_src: yes 
-
 - name: install nodejs dependices 
   community.general.npm:
    path: /app
