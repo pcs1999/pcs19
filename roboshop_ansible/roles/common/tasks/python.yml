@@ -1,7 +1,7 @@
 - name: install the python 3
   ansible.builtin.yum: 
    name:
-    - python 
+    - python36 
     - gcc 
     - python3-devel 
    state: installed 
