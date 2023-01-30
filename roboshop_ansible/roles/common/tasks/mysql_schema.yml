@@ -1,7 +1,7 @@
 - name: install python dep
   ansible.builtin.yum: 
     name: 
-     - python3-pymysql 
+     - python3-PyMySQLS 
      - mysql 
     state: installed
 
