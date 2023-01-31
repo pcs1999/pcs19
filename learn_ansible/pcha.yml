@@ -3,4 +3,4 @@
   connection: local 
   tasks:
    - ansible.builtin.debug: 
-      msg: "{{ lookup('aws_ssm', 'parameter-01', region='us-east-1' ) }}"
+      msg: "{{ lookup('aws_ssm', 'test', region='us-east-1' ) }}"
