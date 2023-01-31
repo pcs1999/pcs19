@@ -8,10 +8,11 @@
      loop:
       - chandra
       - shekar 
-  - name: name and age 
-    ansible.builtin.debug:
-     msg: my name is {{item.age}}, & my age is {{item.age}}
-    loop:
+      
+   - name: name and age 
+     ansible.builtin.debug:
+      msg: my name is {{item.age}}, & my age is {{item.age}}
+     loop:
      - {name: "chandra", age: 24}
      - {name: "shekar", age: 23}
 
