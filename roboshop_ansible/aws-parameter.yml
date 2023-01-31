@@ -1,5 +1,5 @@
 - name: parameters 
-  hosts: localhosts 
+  hosts: localhost 
   connection: local 
   tasks:
     - name: Create or update key/value pair in AWS SSM parameter store
